@@ -12,10 +12,13 @@ const encodedData = Buffer.from(`${clientId}:${clientSecret}`).toString(
   'base64'
 );
 
-const getToken = async () => {
+const api = axios.create({
+  baseURL: 'https://api.spotify.com/v1/'
+});
+
+const auth = async () => {
   const params = new URLSearchParams();
   params.append('grant_type', 'client_credentials');
-
   const res = await axios.post(
     'https://accounts.spotify.com/api/token',
     params,
@@ -29,16 +32,8 @@ const getToken = async () => {
       }
     }
   );
-
   const { access_token } = res.data;
-  return access_token;
+  api.defaults.headers.Authorization = `Bearer ${access_token}`;
 };
 
-export const createInstance = () => {
-  const access_token = getToken();
-  return axios.create({
-    headers: { Authorization: `Bearer ${access_token}` }
-  });
-};
-
-export default createInstance;
+export { auth, api };
