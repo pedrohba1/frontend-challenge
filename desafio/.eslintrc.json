@@ -26,6 +26,16 @@
     "prettier/prettier": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/prop-types": "off",
+
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      {
+        "allowExpressions": true
+      }
+    ],
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [
       1,
@@ -33,7 +43,6 @@
         "extensions": [".tsx"]
       }
     ],
-    "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
