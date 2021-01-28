@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import PlayCircleOutline from '@material-ui/icons/PlayCircleOutline';
-import { SvgIconProps } from '@material-ui/core/SvgIcon';
 import { api, auth } from '../../services/api';
 
-import { Container } from './style';
+import { AlbumContainer, Container } from './style';
 
 const Playlist: React.FC<PlaylistProp> = ({ playlist }) => {
   const [enableContent, setEnableContent] = useState<boolean>(false);
 
   return (
-    <div>
-      <Container
+    <Container>
+      <AlbumContainer
         onMouseOver={(e) => {
           setEnableContent(true);
         }}
@@ -27,9 +26,10 @@ const Playlist: React.FC<PlaylistProp> = ({ playlist }) => {
             </span>
           </h1>
         </div>
-      </Container>
+      </AlbumContainer>
+
       <p>{playlist.description}</p>
-    </div>
+    </Container>
   );
 };
 

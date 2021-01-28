@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { TweenMax } from 'gsap';
+import { motion } from 'framer-motion';
 import { api, auth } from '../../services/api';
 import Playlist from '../../components/Playlist';
 
+import MediaPlayer from '../../components/MediaPlayer';
+import { Container } from './style';
+
 const Dashboard: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const [featured, setFeatured] = useState<PlaylistItem[]>([]);
   const [categories, setCategories] = useState<PlaylistItem[]>([]);
 
@@ -23,7 +29,7 @@ const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <Container>
       <h1>Featured Playlists</h1>
       <br />
       <Grid container spacing={3}>
@@ -33,7 +39,8 @@ const Dashboard: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-    </>
+      <MediaPlayer />
+    </Container>
   );
 };
 
