@@ -8,11 +8,16 @@ interface PlaylistItem {
     href: string;
     id: string;
   };
+  id: string;
   images: Array<Image>;
 }
 
+interface PlaylistProp {
+  playlist: PlaylistItem;
+}
+
 interface Image {
-  heigh: string;
-  width: string;
+  heigh: number;
+  width: number;
   url: string;
 }

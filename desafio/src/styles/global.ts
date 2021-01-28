@@ -6,8 +6,8 @@ import background from '../assets/background.svg';
 // #202020
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-    *{
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,800&display=swap');
+*{
         margin: 0;
         padding: 0;
         outline: 0;
@@ -23,8 +23,7 @@ export default createGlobalStyle`
         font: 14px, Roboto ,sans-serif;
     }
     #root{
-        max-width: 1020px;
-        margin: auto;
+        margin: 20px;
         padding: 0, 20px, 50px;
     }
     button{
