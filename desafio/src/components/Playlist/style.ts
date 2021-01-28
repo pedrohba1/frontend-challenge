@@ -4,12 +4,13 @@ interface PlayerProps {
   showPlayer: boolean;
 }
 
-export const Container = styled.div<PlayerProps>`
-  background-color: #4444;
+export const Container = styled.div``;
 
+export const AlbumContainer = styled.div<PlayerProps>`
   position: relative;
   text-align: center;
   color: white;
+  border-bottom: 1px solid #4444;
 
   p {
   }

@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import background from '../assets/background.svg';
-
 // #FFD300
 // #202020
 
